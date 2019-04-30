@@ -1,0 +1,11 @@
+<mat-card [style.backgroundColor]="'rgb(255, 199, 79)'">
+  <mat-list *ngIf="dettagli">
+    <mat-list-item>
+      <pre>
+        {{dettagli.data}} - {{dettagli.ora}} -> {{dettagli.nome}} {{dettagli.cognome}}
+        {{dettagli.indirizzo}}
+        TEL: {{dettagli.telefono}} - {{dettagli.email}}
+      </pre>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

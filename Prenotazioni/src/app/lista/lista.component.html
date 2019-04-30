@@ -1,0 +1,10 @@
+<mat-card [style.backgroundColor]="'rgb(237, 255, 135)'">
+  <mat-list *ngFor="let art of appuntamentoData" >
+    <mat-list-item (click)="makeTypedRequestOne(id)">
+      {{ art.data }} - {{art.ora}} -> {{art.nome}} {{art.cognome}}
+      <p #id hidden>{{art.id}}</p>
+      </mat-list-item>
+  </mat-list>
+</mat-card>
+
+<app-dettaglio [dettagli]="dettagli"></app-dettaglio>

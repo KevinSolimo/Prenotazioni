@@ -1,0 +1,34 @@
+<mat-card [style.backgroundColor]="'rgb(130, 251, 255)'">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Nome" value="" #nome>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Cognome" value="" #cognome>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Email" #email [formControl]="emailFormControl"
+            [errorStateMatcher]="matcher">
+
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Indirizzo" #indirizzo value="">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Telefono" #telefono value="">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #data [matDatepicker]="picker" placeholder="Data">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Ora" #ora type="time">
+    </mat-form-field>
+    <button mat-raised-button (click)="makeCompactPost(nome,cognome,indirizzo,telefono,email,data,ora)">Click me!</button>
+</mat-card>
